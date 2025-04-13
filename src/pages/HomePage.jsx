@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
 import { useCart } from "../context/CartContext";
 
 const products = [
@@ -45,25 +44,25 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfaf3] px-4 py-6">
-      {/* LOGO */}
-      <div className="text-center mb-6">
+    <div className="min-h-screen bg-[#fdfaf3] text-green-900 font-sans px-4 py-8">
+      {/* Logo & Tagline */}
+      <div className="text-center mb-10">
         <img
           src="/RareOriginLogo.png"
           alt="Rare Origin Logo"
-          className="w-24 mx-auto mb-2"
+          className="w-24 mx-auto mb-4"
         />
-        <h1 className="text-3xl font-bold text-green-900">RARE ORIGIN</h1>
-        <p className="text-green-700 mt-1 text-sm italic">
+        <h1 className="text-4xl font-bold">RARE ORIGIN</h1>
+        <p className="text-md text-green-700 italic mt-2">
           Cultivating Nature, Processing Purity.
         </p>
       </div>
 
-      {/* SLIDER */}
-      <h2 className="text-xl font-semibold text-green-800 mb-4 text-center">Shop Bestsellers</h2>
+      {/* Product Carousel */}
+      <h2 className="text-2xl font-semibold text-center mb-6">Our Bestsellers</h2>
       <Swiper
         spaceBetween={20}
-        slidesPerView={1.1}
+        slidesPerView={1.2}
         breakpoints={{
           640: { slidesPerView: 2.2 },
           1024: { slidesPerView: 3.2 },
@@ -75,7 +74,7 @@ export default function HomePage() {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-48 object-cover rounded-md"
+                className="w-full h-48 object-cover rounded-lg"
               />
               <h3 className="text-lg font-bold text-green-800 mt-3">{product.name}</h3>
               <p className="text-sm text-gray-600">{product.description}</p>
